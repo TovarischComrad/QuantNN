@@ -1,0 +1,81 @@
+problems:
+  - id: binomial_graph3
+    data_dir: ~/examples/binomial_graphs/pkl
+    type: QUBO
+    solver: simcim
+    options: [opt1, opt2]
+    objective:
+        to: min
+        filenames: binominal_graph_3.pkl
+        target: 0
+
+  - id: binomial_graph4
+    data_dir: ~/examples/binomial_graphs/pkl
+    type: ISING
+    solver: simcim
+    objective:
+        to: MIN
+        filenames: binominal_graph_4.pkl
+        target: -18
+
+  - id: binomial_graph5
+    data_dir: ~/examples/binomial_graphs/pkl
+    type: ISING
+    objective:
+        to: MIN
+        filenames: binominal_graph_5.pkl
+        target: -32
+
+
+  - id: binomial_graph6
+    data_dir: ~/examples/binomial_graphs/pkl
+    type: ISING
+    objective:
+        to: MIN
+        filenames: binominal_graph_6.pkl
+        target: -20
+
+
+  - id: binomial_graph7
+    data_dir: ~/examples/binomial_graphs/pkl
+    type: ISING
+    objective:
+        to: MIN
+        filenames: binominal_graph_7.pkl
+        target: -34
+
+
+  - id: binomial_graph8
+    data_dir: ~/examples/binomial_graphs/pkl
+    type: ISING
+    objective:
+        to: MIN
+        filenames: binominal_graph_8.pkl
+        target: -40
+
+  - id: test_solution
+    data_dir: ~/examples
+    type: QUBO
+    solver: simcim
+    options: test
+    objective:
+        to: MIN
+        filenames: quantnn.pkl
+
+simcim:
+  opt1:
+    num_runs: 10
+    num_steps: 1000
+    alpha: 0.3
+    dt: 4
+
+  opt2:
+    num_runs: 100
+    alpha: [0.3, 0.5]
+    dt: 10
+
+  test:
+    num_runs: 500
+    num_steps: 2000
+    alpha: 0.2
+    sigma: 2.0
